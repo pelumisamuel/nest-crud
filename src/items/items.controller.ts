@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Param,
+  Patch,
   Post,
   Put,
 } from '@nestjs/common';
@@ -56,5 +57,9 @@ export class ItemsController {
       console.log(error);
     }
     return { message: 'delete successuffly' };
+  }
+  @Patch(':id')
+  updateOne(@Param('id') id: string) {
+    console.log(id);
   }
 }
